@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+<head>
+  <title>wolfsoul - An Introduction</title>
+  <script src="//cdn.optimizely.com/js/297003488.js"></script>
+  <script type="text/javascript" src="//use.typekit.net/dtv3cow.js"></script>
+  <script type="text/javascript">try {
+    Typekit.load();
+  } catch (e) {
+  }</script>
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"transactionName":"Il0NTUoLD1tUExtZQRVbEE0XFAtYRQ5HXUcSHRBRVxM=","applicationID":"3149518","errorBeacon":"bam.nr-data.net","agentToken":null,"beacon":"beacon-2.newrelic.com","queueTime":0,"agent":"js-agent.newrelic.com/nr-454.min.js","applicationTime":563,"ttGuid":"","licenseKey":"baca767f81"}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o?o:n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({QJf3ax:[function(t,n){function e(t){function n(n,e,o){t&&t(n,e,o),o||(o={});for(var a=i(n),u=a.length,c=o[r]||(o[r]={}),f=0;u>f;f++)a[f].apply(c,e);return c}function o(t,n){u[t]=i(t).concat(n)}function i(t){return u[t]||[]}function a(){return e(n)}var u={};return{on:o,emit:n,create:a,listeners:i,_events:u}}var r="nr@context";n.exports=e()},{}],ee:[function(t,n){n.exports=t("QJf3ax")},{}],handle:[function(t,n){n.exports=t("D5DuLP")},{}],D5DuLP:[function(t,n){function e(t,n,e){return r.listeners(t).length?r.emit(t,n,e):(o[t]||(o[t]=[]),void o[t].push(n))}var r=t(1).create(),o={};n.exports=e,e.ee=r,r.q=o},{1:"QJf3ax"}],loader:[function(t,n){n.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,n){function e(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var n=c.createElement("script");n.src=l.proto+t.agent,c.body.appendChild(n)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),u=window,c=u.document,f="addEventListener",s="attachEvent",p=(""+location).split("?")[0],l=n.exports={offset:i(),origin:p,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),u[f]("load",e,!1)):(c[s]("onreadystatechange",r),u[s]("onload",e)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}]},{},["G9z0Bl"]);</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+  <!-- Pulled from http://code.google.com/p/html5shiv/ -->
+  <!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+
+  <link href="/stylesheets/responsive/reset.css?1411087512" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/responsive/vendor/flexslider.css?1411087512" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/responsive/bootstrap.css?1411087512" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/responsive/bootstrap-responsive.min.css?1411087512" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/responsive/vendor/grid.css?1411087512" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/responsive/styleStatic.css?1411087512" media="screen" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript">(function(e, b) {
+  if (!b.__SV) {
+    var a, f, i, g;
+    window.mixpanel = b;
+    a = e.createElement("script");
+    a.type = "text/javascript";
+    a.async = !0;
+    a.src = ("https:" === e.location.protocol ? "https:" : "http:") + '//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';
+    f = e.getElementsByTagName("script")[0];
+    f.parentNode.insertBefore(a, f);
+    b._i = [];
+    b.init = function(a, e, d) {
+      function f(b, h) {
+        var a = h.split(".");
+        2 == a.length && (b = b[a[0]], h = a[1]);
+        b[h] = function() {
+          b.push([h].concat(Array.prototype.slice.call(arguments, 0)))
+        }
+      }
+
+      var c = b;
+      "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";
+      c.people = c.people || [];
+      c.toString = function(b) {
+        var a = "mixpanel";
+        "mixpanel" !== d && (a += "." + d);
+        b || (a += " (stub)");
+        return a
+      };
+      c.people.toString = function() {
+        return c.toString(1) + ".people (stub)"
+      };
+      i = "disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+      for (g = 0; g < i.length; g++)f(c, i[g]);
+      b._i.push([a, e, d])
+    };
+    b.__SV = 1.2
+  }
+})(document, window.mixpanel || []);
+mixpanel.init("73ba863854b04f1041696c8656527f57");
+</script>
+
+</head>
+<body class="home">
+<div class="body-wrapper">
+  <header class="ziv-header">
+  <div class="search-box" style="display: none;">
+    <div class="maxWidth">
+      <form action="/search" method="get">
+        <input type="text" name="q" id="search-field" placeholder="Search"/>
+        <input type="submit" id="search-submit" value="Submit"/>
+      </form>
+    </div>
+  </div>
+  <div class="cbp-af-header">
+    <div class="cbp-af-inner">
+      <nav>
+        <a class="logoLink" href="/"><img src="/newFrontPage/images/zivity_logo_b.png"/></a>
+        <div class="nav-dropdown mainNav">
+          <div id="menu-icon"><span class="dropdown-toggle icon-list"></span></div>
+          <ul>
+  <a href="/">
+    <li class="home-link">
+      Home
+    </li>
+  </a>
+  <a href="/prizes">
+    <li>
+      Prizes
+    </li>
+  </a>
+  <a href="/photosets/dynamic">
+    <li>
+      Photos
+    </li>
+  </a>
+  <a href="/models/popular?page=1&span=month">
+    <li>
+      People
+    </li>
+  </a>
+  <a href="http://zivity.tumblr.com/" target="_blank">
+    <li>
+      Blog
+    </li>
+  </a>
+</ul>
+
+        </div>
+
+
+
+          <ul class="tabs">
+            <li>
+              <a href="/login">Login</a><span class="separator">|</span><a href="/join" class="join-button js-join" data-section="header">Join</a>
+            </li>
+          </ul>
+
+        </ul>
+        <div class="clear"></div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+  <!--when you change this change it in the js layout as well-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="gallery ">
+  <div class="main-image">
+    <img alt="0005606305-v-large" class="portrait" src="/content/photosets/published_storage/000/000255/000255886/0005606305-v-large.jpg?1396328542" />
+
+          <a href="#footer_join" class="gallery-flag js-join colorBlock" data-section="Gallery Ribbon" data-prop="J/Z as low 7/mo">
+      <h3>Join Zivity!</h3>
+        <h4>For as low as $7/month</h4>
+
+        <div class="flag"></div>
+      </a>
+
+  </div>
+  <div class="facade-of-protection"></div>
+  <div class="main-image-click back js-prev-image"></div>
+  <div class="main-image-click forward js-next-image"></div>
+
+
+  <div class="photoset-thumbnails">
+  <div class="left-controls">
+    <a class="arrow-left js-prev-image icon-sass-toggle" href="javascript:void(0)">&nbsp;</a>
+  </div>
+  <div class="right-controls">
+    <a class="slideshow-toggle js-slideshow-toggle icon-sass-toggle" href="javascript:void(0)" >&nbsp;</a>
+    <a class="full-screen-toggle icon-sass-toggle" href="javascript:void(0)" >&nbsp;</a>
+    <a class="arrow-right js-next-image icon-sass-toggle" href="javascript:void(0)" >&nbsp;</a>
+  </div>
+  <div class="thumbnail-image-container">
+    <a href="/responsive/photosets/255886/photos/0"><img alt="0005606305-v-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606305-v-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/1"><img alt="0005606306-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606306-h-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/2"><img alt="0005606307-v-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606307-v-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/3"><img alt="0005606308-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606308-h-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/4"><img alt="0005606309-v-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606309-v-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/5"><img alt="0005606310-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606310-h-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/6"><img alt="0005606311-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606311-h-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/7"><img alt="0005606312-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606312-h-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/8"><img alt="0005606313-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606313-h-tn_large.jpg?1396328543" /></a><a href="/responsive/photosets/255886/photos/9"><img alt="0005606314-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606314-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/10"><img alt="0005606315-v-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606315-v-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/11"><img alt="0005606316-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606316-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/12"><img alt="0005606317-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606317-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/13"><img alt="0005606318-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606318-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/14"><img alt="0005606319-v-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606319-v-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/15"><img alt="0005606320-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606320-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/16"><img alt="0005606321-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606321-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/17"><img alt="0005606322-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606322-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/18"><img alt="0005606323-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606323-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/19"><img alt="0005606324-v-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606324-v-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/20"><img alt="0005606325-v-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606325-v-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/21"><img alt="0005606326-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606326-h-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/22"><img alt="0005606327-v-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606327-v-tn_large.jpg?1396328544" /></a><a href="/responsive/photosets/255886/photos/23"><img alt="0005606328-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606328-h-tn_large.jpg?1396328545" /></a><a href="/responsive/photosets/255886/photos/24"><img alt="0005606329-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606329-h-tn_large.jpg?1396328545" /></a><a href="/responsive/photosets/255886/photos/25"><img alt="0005606330-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606330-h-tn_large.jpg?1396328545" /></a><a href="/responsive/photosets/255886/photos/26"><img alt="0005606331-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606331-h-tn_large.jpg?1396328545" /></a><a href="/responsive/photosets/255886/photos/27"><img alt="0005606332-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606332-h-tn_large.jpg?1396328545" /></a><a href="/responsive/photosets/255886/photos/28"><img alt="0005606333-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606333-h-tn_large.jpg?1396328545" /></a><a href="/responsive/photosets/255886/photos/29"><img alt="0005606334-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606334-h-tn_large.jpg?1396328546" /></a><a href="/responsive/photosets/255886/photos/30"><img alt="0005606335-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606335-h-tn_large.jpg?1396328546" /></a><a href="/responsive/photosets/255886/photos/31"><img alt="0005606336-h-tn_large" src="/content/photosets/published_storage/000/000255/000255886/0005606336-h-tn_large.jpg?1396328546" /></a>
+    <a href="javascript:void(0)"><img alt="End-tn_large" src="/images/responsive/end-tn_large.png?1411087512" /></a>
+  </div>
+
+
+    <div class="thumbnail-cover">
+      <h3>      <a href="#footer_join" class="js-join" data-section="Thumbnail Cover" data-prop="J/N See all images">
+        JOIN NOW to see all <span class='photo-count'>32 photos</span>
+      </a>
+</h3>
+    </div>
+
+</div>
+
+</section>
+
+  <section class="set-info main-grey main-set-color">
+  <div class="maxWidth">
+    <div class="row-fluid">
+      <div class="span6">
+        <h1><a href="/models/wolfsoul">wolfsoul</a></h1>
+
+        <h2><span>in</span> An Introduction<span class="count">
+          (32 photos)</span></h2>
+
+        <h3><span>by</span> <a href="/photographers/cudnovatiPhoto">cudnovatiPhoto</a></h3>
+
+        <p>
+
+            <a href="#footer_join" class="join-button js-join" data-section="Photoset Info" data-prop="join">Join</a>
+
+        </p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="zivity" data-count="none">Tweet</a>
+        <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:61px; height:20px; background:url('http://platform.tumblr.com/v1/share_2.png') top left no-repeat transparent;">Share
+          on Tumblr</a>
+      </div>
+      <div class="span6">
+        <div class="set-description">
+
+            <h2>&ldquo;WoldSoul and I got together to shoot her intro set for Zivity, something simple but a hint of whats to come from me and from her. I hope you will favor us with your votes and support.&rdquo;</h2>
+
+            <h3 class="attribution">&mdash; <a href="/photographers/cudnovatiPhoto">cudnovatiPhoto</a></h3>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="recommendations grid-whole">
+  <!-- don't put whitespace between the divs, or the tiles will have space :/ -->
+
+    <a href="/models/wolfsoul/photosets/4" class="sets-recommendation grid-third xl-grid-2 l-grid-2 s-grid-half"
+      data-primary-color="#dad1c0"
+      data-secondary-color="#485c58"
+    >
+      <img alt="0005639673-h-tn_prize" class="card" src="/content/photosets/published_storage/000/000257/000257665/0005639673-h-tn_prize.jpg?1401232569" />
+      <div class="description">
+        <h3>Wine Down, Ass Up</h3>
+        <h4><span>featuring</span> wolfsoul</h4>
+      </div>
+    </a>
+
+    <a href="/models/wolfsoul/photosets/3" class="sets-recommendation grid-third xl-grid-2 l-grid-2 s-grid-half"
+      data-primary-color="#2d94ba"
+      data-secondary-color="#044464"
+    >
+      <img alt="0005637355-v-tn_prize" class="card" src="/content/photosets/published_storage/000/000257/000257542/0005637355-v-tn_prize.jpg?1400107847" />
+      <div class="description">
+        <h3>Stairway to Blue. </h3>
+        <h4><span>featuring</span> wolfsoul</h4>
+      </div>
+    </a>
+
+    <a href="/models/wolfsoul/photosets/2" class="sets-recommendation grid-third xl-grid-2 l-grid-2 s-grid-half"
+      data-primary-color="#f0f0e8"
+      data-secondary-color="#2b1c22"
+    >
+      <img alt="0005620818-h-tn_prize" class="card" src="/content/photosets/published_storage/000/000256/000256704/0005620818-h-tn_prize.jpg?1396554108" />
+      <div class="description">
+        <h3>dragon sleeves</h3>
+        <h4><span>featuring</span> wolfsoul</h4>
+      </div>
+    </a>
+
+    <a href="/models/Blake_Stone/photosets/1" class="sets-recommendation grid-third xl-grid-2 l-grid-2 s-grid-half"
+      data-primary-color="#27333a"
+      data-secondary-color="#1e282f"
+    >
+      <img alt="0005600430-h-tn_prize" class="card" src="/content/photosets/published_storage/000/000255/000255605/0005600430-h-tn_prize.jpg?1392357609" />
+      <div class="description">
+        <h3>Red Blue and Blonde</h3>
+        <h4><span>featuring</span> Blake_Stone</h4>
+      </div>
+    </a>
+
+    <a href="/models/SarahPrankha/photosets/48" class="sets-recommendation grid-third xl-grid-2 l-grid-2 s-grid-half"
+      data-primary-color="#d5d39c"
+      data-secondary-color="#493229"
+    >
+      <img alt="0005422783-h-tn_prize" class="card" src="/content/photosets/published_storage/000/000247/000247163/0005422783-h-tn_prize.jpg?1380541215" />
+      <div class="description">
+        <h3>Harvest of light </h3>
+        <h4><span>featuring</span> SarahPrankha</h4>
+      </div>
+    </a>
+
+    <a href="/models/Porcelain/photosets/42" class="sets-recommendation grid-third xl-grid-2 l-grid-2 s-grid-half"
+      data-primary-color="#271c12"
+      data-secondary-color="#24180e"
+    >
+      <img alt="0005631542-h-tn_prize" class="card" src="/content/photosets/published_storage/000/000257/000257263/0005631542-h-tn_prize.jpg?1398894435" />
+      <div class="description">
+        <h3>Tripletes</h3>
+        <h4><span>featuring</span> Porcelain</h4>
+      </div>
+    </a>
+
+  <div class="clear"></div>
+</section>
+
+  <div class="clear"></div>
+  <section id="footer_join" class="footer-signup main-grey">
+  <div class="maxWidth">
+    <h3 class="headline"><abbr>Join now</abbr></h3>
+    <form action="https://www.zivity.com/join" autocomplete="off" enctype="multipart/form-data" id="signup-form" method="post" name="create_account">
+
+  <div class="user-info payment-section">
+    <input id="user_login" maxlength="20" name="user[login]" placeholder="username" size="20" tabindex="1" type="text" />
+
+    <input id="user_email" maxlength="255" name="user[email]" placeholder="email" size="255" tabindex="1" type="text" />
+
+    <input id="user_password" maxlength="255" name="user[password]" placeholder="password" size="255" tabindex="1" type="password" />
+
+  </div>
+
+
+
+
+<ul class="radio-area plan-options payment-section">
+    <li id="quarterly_plan">
+    <label>
+      <input type="radio" class="inline" name="subscribe[vote_plan]" value="quarterly" />
+
+      <div class="plan">$27/quarter ($9/month)</div>
+      <div class="vote-description">5 FREE votes every 3 months</div>
+    </label>
+  </li>
+  <li id="monthly_plan">
+    <label>
+      <input type="radio" name="subscribe[vote_plan]" value="monthly"/>
+
+      <div class="plan">$15/month</div>
+      <div class="vote-description">5 FREE votes every month</div>
+    </label>
+  </li>
+  <li id="anual_plan">
+    <label>
+      <input type="radio" name="subscribe[vote_plan]" value="yearly"/>
+
+      <div class="plan">$84/year</div>
+      <div class="vote-description">10 FREE votes every year (PayPal ONLY)</div>
+    </label>
+  </li>
+</ul>
+<input type="hidden" name="invite_id" value="0"/>
+<input type="hidden" name="passcode" value="0"/>
+
+<ul class="radio-area payment-processor payment-section">
+
+    <li class="radio-button-wrapper" id="radio-wrapper-cc">
+      <label>
+        <input id="processorcc" type="radio" name="payment[type]" value="credit"  />
+        Credit Card
+      </label>
+    </li>
+
+
+
+    <li class="radio-button-wrapper" id="radio-wrapper-pp">
+      <label>
+        <input id="processorpp" type="radio" name="payment[type]" value="paypal" checked="checked"/>
+        Paypal
+      </label>
+    </li>
+
+</ul>
+
+
+
+<div id="subscribe_by_credit" class="clear">
+
+
+  <div class="card-info payment-section">
+
+    <input type="text" placeholder="name" id="billing_name" name="subscribe[billing_name]" class="full-width" value=""/>
+    <input type="text" placeholder="card number" id="subscribe_credit_card_number" name="subscribe[credit_card_number]" maxlength="16" value="">
+
+    <div class="card-expiration">
+
+    <label>Expiration Date:</label>
+      <select id="subscribe_exp_month" name="subscribe[exp_month]"><option value="" disabled selected>MONTH</option>
+ <option value='1' >1</option>
+ <option value='2' >2</option>
+ <option value='3' >3</option>
+ <option value='4' >4</option>
+ <option value='5' >5</option>
+ <option value='6' >6</option>
+ <option value='7' >7</option>
+ <option value='8' >8</option>
+ <option value='9' >9</option>
+ <option value='10' >10</option>
+ <option value='11' >11</option>
+ <option value='12' >12</option></select>
+      <select id="subscribe_exp_year" name="subscribe[exp_year]"><option value="" disabled selected>YEAR</option>
+ <option value='2014' >2014</option>
+ <option value='2015' >2015</option>
+ <option value='2016' >2016</option>
+ <option value='2017' >2017</option>
+ <option value='2018' >2018</option>
+ <option value='2019' >2019</option>
+ <option value='2020' >2020</option>
+ <option value='2021' >2021</option>
+ <option value='2022' >2022</option>
+ <option value='2023' >2023</option>
+ <option value='2024' >2024</option></select>
+    </div>
+
+  </div>
+
+  <div class="billing-address payment-section">
+    <input type="text" placeholder="ccv code" id="subscribe_ccv" name="subscribe[ccv]" maxlength="4" value=""/>
+
+
+    <input type="text" placeholder="postal code" id="subscribe_zip" name="subscribe[zip]" value=""/>
+
+    <label>Country:</label>
+    <select id="country-select" name="subscribe[country]">
+      <option value=""/>
+      <option value="United States" selected="selected">United States</option>
+<option value="Canada">Canada</option>
+<option value="United Kingdom">United Kingdom</option><option value="" disabled="disabled">-------------</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Sudan">Sudan</option>
+<option value="Spain">Spain</option>
+<option value="Western Sahara">Western Sahara</option>
+<option value="Benin">Benin</option>
+<option value="Palau">Palau</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Réunion">Réunion</option>
+<option value="Poland">Poland</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+<option value="Japan">Japan</option>
+<option value="Greece">Greece</option>
+<option value="Tonga">Tonga</option>
+<option value="Monaco">Monaco</option>
+<option value="Jersey">Jersey</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Panama">Panama</option>
+<option value="Cuba">Cuba</option>
+<option value="Oman">Oman</option>
+<option value="Iraq">Iraq</option>
+<option value="Chad">Chad</option>
+<option value="Viet Nam">Viet Nam</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<option value="Bouvet Island">Bouvet Island</option>
+<option value="Korea, Democratic People&#39;s Republic of">Korea, Democratic People&#39;s Republic of</option>
+<option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+<option value="Croatia">Croatia</option>
+<option value="Sweden">Sweden</option>
+<option value="Ethiopia">Ethiopia</option>
+<option value="Qatar">Qatar</option>
+<option value="Mozambique">Mozambique</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="Kenya">Kenya</option>
+<option value="Aruba">Aruba</option>
+<option value="Macao">Macao</option>
+<option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+<option value="Ghana">Ghana</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Albania">Albania</option>
+<option value="Moldova, Republic of">Moldova, Republic of</option>
+<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="South Africa">South Africa</option>
+<option value="Finland">Finland</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Botswana">Botswana</option>
+<option value="Norway">Norway</option>
+<option value="Saint Barthélemy">Saint Barthélemy</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Pitcairn">Pitcairn</option>
+<option value="Åland Islands">Åland Islands</option>
+<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+<option value="Zambia">Zambia</option>
+<option value="Denmark">Denmark</option>
+<option value="Armenia">Armenia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Iceland">Iceland</option>
+<option value="French Southern Territories">French Southern Territories</option>
+<option value="Curaçao">Curaçao</option>
+<option value="Chile">Chile</option>
+<option value="Suriname">Suriname</option>
+<option value="Fiji">Fiji</option>
+<option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+<option value="Singapore">Singapore</option>
+<option value="Nepal">Nepal</option>
+<option value="Canada">Canada</option>
+<option value="Korea, Republic of">Korea, Republic of</option>
+<option value="Haiti">Haiti</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Niger">Niger</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<option value="Serbia">Serbia</option>
+<option value="Martinique">Martinique</option>
+<option value="Barbados">Barbados</option>
+<option value="Guam">Guam</option>
+<option value="Turkey">Turkey</option>
+<option value="Saint Martin (French part)">Saint Martin (French part)</option>
+<option value="Togo">Togo</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Liberia">Liberia</option>
+<option value="Italy">Italy</option>
+<option value="South Sudan">South Sudan</option>
+<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Belarus">Belarus</option>
+<option value="Hungary">Hungary</option>
+<option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="Brunei Darussalam">Brunei Darussalam</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Cambodia">Cambodia</option>
+<option value="Uganda">Uganda</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Dominica">Dominica</option>
+<option value="Peru">Peru</option>
+<option value="Angola">Angola</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Andorra">Andorra</option>
+<option value="Thailand">Thailand</option>
+<option value="Cyprus">Cyprus</option>
+<option value="China">China</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Yemen">Yemen</option>
+<option value="Virgin Islands, British">Virgin Islands, British</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Belize">Belize</option>
+<option value="Nauru">Nauru</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="United States">United States</option>
+<option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Guinea-Bissau">Guinea-Bissau</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Greenland">Greenland</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="Gabon">Gabon</option>
+<option value="Czech Republic">Czech Republic</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Colombia">Colombia</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Congo, the Democratic Republic of the">Congo, the Democratic Republic of the</option>
+<option value="Algeria">Algeria</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Malta">Malta</option>
+<option value="Belgium">Belgium</option>
+<option value="Antarctica">Antarctica</option>
+<option value="Samoa">Samoa</option>
+<option value="Gambia">Gambia</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="Luxembourg">Luxembourg</option>
+<option value="Afghanistan">Afghanistan</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Israel">Israel</option>
+<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Rwanda">Rwanda</option>
+<option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+<option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Guyana">Guyana</option>
+<option value="Palestine, State of">Palestine, State of</option>
+<option value="Tuvalu">Tuvalu</option>
+<option value="Guinea">Guinea</option>
+<option value="Philippines">Philippines</option>
+<option value="Argentina">Argentina</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Germany">Germany</option>
+<option value="Latvia">Latvia</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Vanuatu">Vanuatu</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Niue">Niue</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Brazil">Brazil</option>
+<option value="Honduras">Honduras</option>
+<option value="Portugal">Portugal</option>
+<option value="Estonia">Estonia</option>
+<option value="Maldives">Maldives</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Macedonia, the former Yugoslav Republic of">Macedonia, the former Yugoslav Republic of</option>
+<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Timor-Leste">Timor-Leste</option>
+<option value="Grenada">Grenada</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+<option value="India">India</option>
+<option value="San Marino">San Marino</option>
+<option value="Congo">Congo</option>
+<option value="Lao People&#39;s Democratic Republic">Lao People&#39;s Democratic Republic</option>
+<option value="Bahamas">Bahamas</option>
+<option value="Comoros">Comoros</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Malawi">Malawi</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Ukraine">Ukraine</option>
+<option value="Austria">Austria</option>
+<option value="Mali">Mali</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Georgia">Georgia</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Morocco">Morocco</option>
+<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Senegal">Senegal</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Netherlands">Netherlands</option>
+<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+<option value="Egypt">Egypt</option>
+<option value="Mexico">Mexico</option>
+<option value="Burundi">Burundi</option>
+<option value="Namibia">Namibia</option>
+<option value="Romania">Romania</option>
+<option value="Jordan">Jordan</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Australia">Australia</option>
+<option value="Myanmar">Myanmar</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Libya">Libya</option>
+<option value="French Guiana">French Guiana</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="France">France</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Côte d&#39;Ivoire">Côte d&#39;Ivoire</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Somalia">Somalia</option>
+<option value="Ireland">Ireland</option>
+    </select>
+  </div>
+</div>
+
+
+
+  <input id="join_now" class="btn btn-1" type="submit" value="Join Now"/>
+  <p class="legalese">
+    By clicking this button you are saying you are over 18, and agree to the
+    <a href="/legal/tos" class="normal-type">terms and conditions</a>.
+  </p>
+</form>
+
+  </div>
+</section>
+
+
+
+</div>
+<footer>
+  <div class="maxWidth">
+    <div class="row-fluid">
+      <div class="span3">
+        <h3>Mailing List</h3>
+        <!-- Begin MailChimp Signup Form -->
+        <style type="text/css">
+            #mc_embed_signup {
+                background: none;
+            }
+
+            /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+          <form action="http://zivity.us4.list-manage1.com/subscribe/post?u=7ff59032e294b0664cfa135e9&amp;id=17c7b61763"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                class="validate" target="_blank" novalidate>
+            <label for="mce-EMAIL">Subscribe to our mailing list</label>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"
+                   placeholder="email address" required>
+
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe"
+                                      id="mc-embedded-subscribe" class="button"></div>
+          </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+      </div>
+      <div class="span3">
+        <h3>Sitemap</h3>
+        <ul class="bottom_nav_list">
+          <li><a href="/photographer/photoset_upload/subscriber_upload" rel="nofollow">Publish
+            on Zivity</a></li>
+
+
+          <li><a href="/guidelines" rel="nofollow">Community Guidelines</a></li>
+
+          <div id="zen_desk_help">
+            <li><a href="http://zivity.zendesk.com/account/dropboxes/20042833" title="HELP" rel="nofollow" onclick="Zenbox.show(); return false;">Help</a></li>
+          </div>
+        </ul>
+
+        <ul class="bottom_nav_list">
+          <li><a href="/about" rel="nofollow">About</a></li>
+          <li><a href="http://zivity.zendesk.com/" title="Frequently Asked Questions" rel="nofollow">FAQ</a>
+          </li>
+        </ul>
+
+        <ul class="bottom_nav_list">
+          <li><a href="/legal/tos" rel="nofollow">Terms of Use</a></li>
+          <li><a href="/legal/privacy" rel="nofollow">Privacy Policy</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div class="span6">
+        <h3>Social</h3>
+
+        <div class="social">
+          <a href="https://twitter.com/zivity"><span class="icon-twitter"></span></a>
+          <a href="https://www.facebook.com/Zivity"><span class="icon-facebook"></span></a>
+          <a href="http://zivity.tumblr.com/"><span class="icon-tumblr"></span></a>
+          <a href="http://instagram.com/zivity"><span class="icon-instagram"></span></a>
+
+          <div class="clear"></div>
+        </div>
+        <div class="copyright right">
+          <a href="/compliance">18 U.S.C. 2257 Record-Keeping Requirements Compliance Statement</a>
+          | &copy;2013 Zivity
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/javascripts/responsive/vendor/jquery-1.7.1.min.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/jquery.flexslider.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/bootstrap.min.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/jquery.placeholder.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/color-thief.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/tinycolor.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/equalize.min.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/imagesloaded.pkgd.min.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/underscore-min.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/jquery.touchSwipe.min.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/vendor/backbone-min.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/zv.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/colors.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/layout.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/gallery.js?1411087512" type="text/javascript"></script>
+<script src="/javascripts/responsive/set_page.js?1411087512" type="text/javascript"></script>
+
+<script>
+  !function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id = id;
+      js.src = p + '://platform.twitter.com/widgets.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+  }(document, 'script', 'twitter-wjs');
+</script>
+<script>
+  window.preloads = {};preloads.photoset={"verified_at":"2014/02/18 14:14:28 -0600","processing":false,"description":"WoldSoul and I got together to shoot her intro set for Zivity, something simple but a hint of whats to come from me and from her. I hope you will favor us with your votes and support.","photographer_license_id":0,"moderated_at":"2014/02/18 15:51:26 -0600","id":255886,"queued_at":"2014/04/01 00:00:00 -0500","progress":100,"min_access_level":"trial","deleted_at":null,"withdraw_at":null,"stamp_locations_approved_at":"2014/02/18 14:27:09 -0600","photog_exhibit_sig":"C.G.S.","dudes":false,"created_at":"2014/02/18 14:11:19 -0600","stamped_at":"2014/02/18 14:34:13 -0600","saved_at":null,"self_shot":false,"photographer_approved_at":"2014/02/18 14:28:27 -0600","name":"An Introduction","failed_processing_attempts":0,"category":"set","accepted_at":null,"secondary_color":"#404941","published_at":"2014/04/01 00:03:39 -0500","primary_color":"#9d9d8b","highlight_photo_id":5606306,"worksafe":true,"model_exhibit_sig":"MMP","withdrawn":false,"uploaded_at":"2014/02/18 14:11:19 -0600","updated_at":"2014/09/16 14:58:40 -0500"};preloads.current_user={"vote_balance":0,"classification":"visitor","admin":false,"active":false,"editor":false,"publicist":false};
+  window.current_user = preloads.current_user
+  window.paction = {"analytics_data":{},"analytics_name":"show/photoset","title":"Zivity","section":"photoset","name":"show"}
+    $(Zivity.init)
+  var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-2269828-5']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+
+  <script>$(Zivity.initSetPage)</script>
+
+<script src="//platform.tumblr.com/v1/share.js"></script>
+<script type="text/javascript" src="//asset0.zendesk.com/external/zenbox/v2.4/zenbox.js"></script>
+<style type="text/css" media="screen, projection"> @import url(//asset0.zendesk.com/external/zenbox/v2.4/zenbox.css); </style>
+<script type="text/javascript">
+  $(Zivity.initZendesk)
+</script>
+</body>
+</html>
