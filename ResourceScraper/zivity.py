@@ -1,8 +1,9 @@
 import os
-from bs4 import BeautifulSoup
 import logging
+import re
+from bs4 import BeautifulSoup
 
-from scrape import HtmlImageScraper, Resource
+from scrape import HtmlImageScraper, Resource, Page
 
 
 class ZivityScraper(HtmlImageScraper):
@@ -14,8 +15,7 @@ class ZivityScraper(HtmlImageScraper):
     def grab_url(self, url):
         contents, meta = super(ZivityScraper, self).grab_url(url)
         # Assumes URL of https://www.zivity.com/models/<model_name>/photosets/<photoset_num>
-        meta['model_name'] = url.split('/')[-3]
-        meta['photoset_num'] = url.split('/')[-1]
+        meta = self.url_to_meta(url)
         self.logger.debug('Retrieved url for model: {0} photoset: {1}'.format(meta['model_name'], meta['photoset_num']))
         return contents, meta
 
@@ -52,15 +52,6 @@ class ZivityScraper(HtmlImageScraper):
         return resources
 
     def link_to_resource(self, resource_link, page_meta):
-        """
-
-        :param resource_link: Resource link.
-        :type resource_link: str
-        :param page_meta: Page metadata.
-        :type page_meta: dict
-        :return: Resource.
-        :rtype: Resource
-        """
         # Add domain and replace thumbnail prefix in link
         url = 'https://www.zivity.com{0}'.format(resource_link.replace('tn_', ''))
         return Resource(url, page_meta)
@@ -71,6 +62,41 @@ class ZivityScraper(HtmlImageScraper):
 
     def store_resource(self, resource, data):
         self.storage.store(resource, data)
+
+    def find_page_links(self, parser, page_meta):
+        pages = []
+        links = parser.find_all('a')
+        for link in links:
+            href = link.get('href')
+            if href and re.match(r'/models/[^/]+/photosets/[0-9]+', href):
+                pages.append(href)
+        return pages
+
+    def link_to_page(self, page_link, page_meta):
+        # Add domain to URL
+        url = 'https://www.zivity.com{0}'.format(page_link)
+        page_meta = self.url_to_meta(url)
+        return Page(url, page_meta)
+
+    def page_needed(self, page):
+        # Assumes that page we already have stored does not need to be re-scraped
+        return not self.storage.page_exists(page)
+
+    def url_to_meta(self, url):
+        """
+        Split a photoset page URL into metadata.
+
+        :param url: URL
+        :type url: str
+        :return:
+        :rtype: dict
+        """
+        #TODO: want to be able to scrape non-photoset pages for more page links, couldn't parse those URLs the same
+        return {
+            'model_name': url.split('/')[-3],
+            'photoset_num': url.split('/')[-1],
+            'url': url
+        }
 
 
 # TODO: Create some parent classes for file/folder based storage
@@ -89,6 +115,10 @@ class ZivityStorage(object):
         file_path, dir, filename = self.get_storage_info(resource)
         return os.path.exists(file_path)
 
+    def page_exists(self, page):
+        dir = self.get_storage_dir(page.meta)
+        return os.path.exists(dir)
+
     def store(self, resource, data):
         file_path, dir, filename = self.get_storage_info(resource)
         self.logger.debug('Saving resource to {0}'.format(file_path))
@@ -100,8 +130,11 @@ class ZivityStorage(object):
     def get_storage_info(self, resource):
         url = resource.url
         filename = url[url.rfind('/') + 1:url.rfind('?')]
-        model = resource.meta['model_name']
-        photoset = resource.meta['photoset_num']
-        dir = os.path.join('scrape', model, photoset)
+        dir = self.get_storage_dir(resource.meta)
         file_path = os.path.join(dir, filename)
         return file_path, dir, filename
+
+    def get_storage_dir(self, meta):
+        model = meta['model_name']
+        photoset = meta['photoset_num']
+        return os.path.join('scrape', model, photoset)

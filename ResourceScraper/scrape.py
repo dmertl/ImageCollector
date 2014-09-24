@@ -69,35 +69,18 @@ class Scrape(object):
             if self.scraper.resource_needed(resource):
                 data = self.scraper.download_resource(resource)
                 self.scraper.store_resource(resource, data)
-                self.logger.info('Downloaded resource {0}'.format(str(Resource)))
+                self.logger.info('Downloaded resource {0}'.format(resource))
             else:
-                self.logger.debug('Skipping unneeded resource {0}'.format(str(Resource)))
-        # page_links = handler.find_pages()
-        # for page_link in page_links:
-        # page = massage_page(page_link)
-        # if page_needed(page):
-        #         scrape_url(page.get_url())
-        pass
+                self.logger.debug('Skipping unneeded resource {0}'.format(resource))
 
-    def massage_resource(resource_link):
-        """
-        Massage a resource link into a proper resource.
-
-        :param resource_link: Link to resource scraped from page.
-        :type resource_link: object
-        :return:
-        :rtype:
-        """
-        pass
-
-    def resource_needed(self, resource):
-        """
-
-        :param resource:
-        :type resource:
-        :return:
-        :rtype:
-        """
+        page_links = self.scraper.find_page_links(parser, page_meta)
+        self.logger.debug('Found {0} page links'.format(len(page_links)))
+        for page_link in page_links:
+            page = self.scraper.link_to_page(page_link, page_meta)
+            if self.scraper.page_needed(page):
+                self.scrape_url(page.url)
+            else:
+                self.logger.debug('Skipping unneeded page {0}'.format(page))
 
 
 class Resource(object):
@@ -111,6 +94,28 @@ class Resource(object):
         :param url: Resource URL
         :type url: str
         :param meta: Resource metadata
+        :type meta: dict
+        :return:
+        :rtype:
+        """
+        self.url = url
+        self.meta = meta
+
+    def __str__(self):
+        return str(self.url)
+
+
+class Page(object):
+    """
+    A page found while scraping.
+    """
+
+    def __init__(self, url, meta):
+        """
+
+        :param url: Page URL
+        :type url: str
+        :param meta: Page metadata
         :type meta: dict
         :return:
         :rtype:
@@ -250,6 +255,46 @@ class Scraper(object):
         :rtype:
         """
         pass
+
+    @abc.abstractmethod
+    def find_page_links(self, parser, page_meta):
+        """
+        Find additional page links in page.
+
+        :param parser: Page content parser.
+        :type parser:
+        :param page_meta: Page metadata.
+        :type page_meta: dict
+        :return: Page links.
+        :rtype: list
+        """
+        pass
+
+    def link_to_page(self, page_link, page_meta):
+        """
+        Convert resource link to a Page. Perform any necessary massaging of page_link to usable URL. Parse
+        useful info from page_link into metadata.
+
+        :param page_link: Page link.
+        :type page_link:
+        :param page_meta: Page metadata.
+        :type page_meta: dict
+        :return: Page.
+        :rtype: Page
+        """
+        return Page(page_link, page_meta)
+
+    @abc.abstractmethod
+    def page_needed(self, page):
+        """
+        Check if a page needs to be scraped.
+
+        :param page: Page.
+        :type page: Page
+        :return: True if page should be scraped.
+        :rtype: bool
+        """
+        return True
 
 
 class HtmlImageScraper(Scraper):
