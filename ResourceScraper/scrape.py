@@ -1,6 +1,7 @@
 import os
 import urllib2
 import abc
+import logging
 
 
 class Scrape(object):
@@ -8,15 +9,18 @@ class Scrape(object):
     Runs the standard scraping process. Uses provided Scraper to perform actual content parsing.
     """
 
-    def __init__(self, scraper):
+    def __init__(self, scraper, logger):
         """
 
         :param scraper: Scraper used to perform scraping.
         :type scraper: Scraper
+        :param logger: Logger.
+        :type logger: logging.RootLogger
         :return:
         :rtype:
         """
         self.scraper = scraper
+        self.logger = logger
 
     def scrape_url(self, url):
         """
@@ -59,11 +63,15 @@ class Scrape(object):
         page_meta = self.scraper.get_page_metadata(parser, content_meta)
 
         resource_links = self.scraper.find_resource_links(parser, page_meta)
+        self.logger.debug('Found {0} resource links'.format(len(resource_links)))
         for resource_link in resource_links:
             resource = self.scraper.link_to_resource(resource_link, page_meta)
             if self.scraper.resource_needed(resource):
                 data = self.scraper.download_resource(resource)
                 self.scraper.store_resource(resource, data)
+                self.logger.info('Downloaded resource {0}'.format(str(Resource)))
+            else:
+                self.logger.debug('Skipping unneeded resource {0}'.format(str(Resource)))
         # page_links = handler.find_pages()
         # for page_link in page_links:
         # page = massage_page(page_link)
@@ -110,8 +118,21 @@ class Resource(object):
         self.url = url
         self.meta = meta
 
+    def __str__(self):
+        return str(self.url)
+
 
 class Scraper(object):
+    def __init__(self, logger):
+        """
+
+        :param logger: Logger.
+        :type logger: logging.RootLogger
+        :return:
+        :rtype:
+        """
+        self.logger = logger
+
     def grab_url(self, url):
         """
         Retrieve page contents and metadata from a URL.
@@ -121,6 +142,7 @@ class Scraper(object):
         :return: contents, metadata
         :rtype: tuple
         """
+        self.logger.info('Retrieving URL {0}'.format(url))
         contents = urllib2.urlopen(url).read()
         meta = {'url': url}
         return contents, meta
@@ -134,6 +156,7 @@ class Scraper(object):
         :return: contents, metadata
         :rtype: tuple
         """
+        self.logger.info('Retrieving file {0}'.format(file_path))
         contents = urllib2.urlopen('file:{0}'.format(urllib2.quote(os.path.abspath(file_path)))).read()
         meta = {'file_path': file_path}
         return contents, meta
