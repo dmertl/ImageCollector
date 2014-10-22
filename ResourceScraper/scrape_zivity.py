@@ -32,4 +32,10 @@ if __name__ == '__main__':
     if os.path.exists(args.url):
         scrape.scrape_file(args.url)
     else:
-        scrape.scrape_url(args.url)
+        scraped = set()
+        to_scrape = set([args.url])
+        while len(to_scrape):
+            current_url = to_scrape.pop()
+            to_scrape.update(scrape.scrape_url(current_url))
+            scraped.add(current_url)
+            to_scrape -= scraped

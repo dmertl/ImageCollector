@@ -28,12 +28,11 @@ class Scrape(object):
 
         :param url: URL to page.
         :type url: str
-        :return:
-        :rtype:
+        :return: Additional URLs to scrape
+        :rtype: string[]
         """
         contents, meta = self.scraper.grab_url(url)
-        self.scrape_page(contents, meta)
-        pass
+        return self.scrape_page(contents, meta)
 
     def scrape_file(self, path):
         """
@@ -41,12 +40,11 @@ class Scrape(object):
 
         :param path: Path to file.
         :type path: str
-        :return:
-        :rtype:
+        :return: Additional URLs to scrape
+        :rtype: string[]
         """
         contents, meta = self.scraper.grab_file(path)
-        self.scrape_page(contents, meta)
-        pass
+        return self.scrape_page(contents, meta)
 
     def scrape_page(self, contents, content_meta):
         """
@@ -75,12 +73,14 @@ class Scrape(object):
 
         page_links = self.scraper.find_page_links(parser, page_meta)
         self.logger.debug('Found {0} page links'.format(len(page_links)))
+        additional_urls = []
         for page_link in page_links:
             page = self.scraper.link_to_page(page_link, page_meta)
             if self.scraper.page_needed(page):
-                self.scrape_url(page.url)
+                additional_urls.append(page.url)
             else:
                 self.logger.debug('Skipping unneeded page {0}'.format(page))
+        return additional_urls
 
 
 class Resource(object):
